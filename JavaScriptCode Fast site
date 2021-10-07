@@ -1,14 +1,26 @@
 const {By,Builder, WebDriver, Actions, WebElement, Key} = require("selenium-webdriver");
 require("chromedriver");
-async function example(){ 
-        
+function generateEmail() {
+        var allchars = 'abcdefghijklmnopqrstuvwxyz1234567890';
+        var emailLength = 8;
+        var string = '';
+        for(var i=0; i<emailLength; i++){
+            string += allchars[Math.floor(Math.random() * allchars.length)];
+        }
+        string = string + '@fast.invalid';
+        return string;
+        }
+        var newEmail = generateEmail();
+
+
+        async function fastStore(){ 
         var driver = await new Builder().forBrowser("chrome").build();
         await driver.manage().window().maximize(); 
         await driver.get("https://checkout.staging.slowfast.co/complete-profile?app_id=f864c369-e470-40ac-81ad-df2cd3c7f44c&button_id=d24a1b54-f654-42f0-a405-a78d46c4c7db&currency=USD&option_values=&platform=bigcommerce&platformItemIds=%5B%7B%22optionValues%22%3A%5B%7B%22optionId%22%3A%7B%22value%22%3A%22128%22%7D%2C%22optionValue%22%3A%7B%22value%22%3A%22183%22%7D%7D%2C%7B%22optionId%22%3A%7B%22value%22%3A%22129%22%7D%2C%22optionValue%22%3A%7B%22value%22%3A%22176%22%7D%7D%5D%2C%22quantity%22%3A%221%22%2C%22platformProductId%22%3A%7B%22value%22%3A%22124%22%7D%7D%5D&platform_item_ids=%5B%7B%22platformProductId%22%3A%7B%22value%22%3A%22124%22%2C%22platform%22%3A%22bigcommerce%22%7D%2C%22quantity%22%3A%221%22%2C%22platformName%22%3A%22bigcommerce%22%2C%22optionValues%22%3A%5B%5D%7D%5D&product_id=124&quantity=1&version=1.2.0");
         setTimeout(email,5000);
         console.log("Email entered sucessfully");
         function email(){ 
-                driver.findElement(By.xpath("//input[@data-testid='email-input']")).sendKeys('fast78iok9@fast.invalid');
+                driver.findElement(By.xpath("//input[@data-testid='email-input']")).sendKeys(newEmail);
         }
         setTimeout(firstName,6000);
         console.log("First name entered sucessfully");
@@ -73,6 +85,6 @@ async function example(){
         function completePurchae(){ 
                 driver.findElement(By.xpath("(//*[text()='Complete Purchase'])[1]")).sendKeys(Key.ENTER);
         }
+        
 }
-
-example()
+fastStore()
