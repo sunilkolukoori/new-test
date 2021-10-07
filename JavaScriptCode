@@ -1,0 +1,169 @@
+const {By,Builder, WebDriver, Actions,assert, Key} = require("selenium-webdriver");
+require("chromedriver");
+
+async function example(){ 
+    var driver = await new Builder().forBrowser("chrome").build();
+    await driver.manage().window().maximize(); 
+await driver.get("https://www.flipkart.com/");
+await driver.findElement(By.xpath("(//input[@type='text'])[2]")).sendKeys('9704482087');
+await driver.findElement(By.xpath("//input[@type='password']")).sendKeys('As@061111');
+await driver.findElement(By.xpath("(//button[@type='submit'])[2]")).click();
+setTimeout(searchtheproduct,3000);
+console.log("Searching the product");
+function searchtheproduct(){
+  driver.findElement(By.name("q")).sendKeys("POCO M3",Key.ENTER);
+}
+setTimeout(selectingproduct,5000);
+console.log("Selected Product");
+function selectingproduct(){
+  driver.findElement(By.xpath("(//*[text()='POCO M3 (Cool Blue, 64 GB)'])[1]")).click();
+}
+setTimeout(product,3000);
+console.log("waited until for element visibile");
+function product(){
+  driver.get("https://www.flipkart.com/poco-m3-cool-blue-64-gb/p/itm3bcdc32409005?pid=MOBG4CGF7NWAEVRK&lid=LSTMOBG4CGF7NWAEVRKSCTC2I&marketplace=FLIPKART&q=poco+m3&store=tyy%2F4io&srno=s_1_1&otracker=AS_Query_HistoryAutoSuggest_1_4_na_na_na&otracker1=AS_Query_HistoryAutoSuggest_1_4_na_na_na&fm=SEARCH&iid=da03f843-1714-4b91-965c-40345264cb7d.MOBG4CGF7NWAEVRK.SEARCH&ppt=hp&ppn=homepage&ssid=y4kwpni5ls0000001633344887343&qH=02307bbd0cb7930c");
+  driver.findElement(By.xpath("//button[@type='button']")).click();
+}
+setTimeout(delivery,11000);
+console.log("Clicked on delivery address");
+function delivery(){
+driver.findElement(By.xpath("//*[text()='Deliver Here']")).sendKeys(Key.ENTER);
+}
+setTimeout(continuebutton,13000);
+console.log("Clicked on continue");
+function continuebutton(){
+  driver.findElement(By.xpath("//*[text()='CONTINUE']")).click();
+ }
+ 
+ setTimeout(payment,20000);
+ console.log("Clicked On Payment section");
+ function payment(){
+  driver.findElement(By.xpath("//*[text()='Credit / Debit / ATM Card']")).click();  
+ }
+ setTimeout(cardnumber,21000);
+ console.log("Card number entered sucessfully");
+ function cardnumber(){
+   driver.findElement(By.xpath("//input[@name='cardNumber']")).sendKeys('4111111111111111');
+ }
+ setTimeout(monthdropdown,22000);
+ console.log("Clicked on Month drop down");
+ function monthdropdown(){
+   driver.findElement(By.xpath("//select[@name='month']")).click();
+ }
+ setTimeout(Month,23000);
+ console.log("Selected Month");
+ function Month(){
+   driver.findElement(By.xpath("//*[text()='02']")).click();
+ }
+ setTimeout(yeardropdown,22000);
+ console.log("Clicked On Year drop down");
+ function yeardropdown(){
+   driver.findElement(By.xpath("//select[@name='year']")).click();
+ }
+ setTimeout(year,23000);
+ console.log("Selected year");
+ function year(){
+   driver.findElement(By.xpath("//*[text()='25']")).click();
+ }
+ setTimeout(cvv,22000);
+ console.log("Cvv number entered sucessfully");
+ function cvv(){
+   driver.findElement(By.xpath("//input[@name='cvv']")).sendKeys('123');
+ }
+ setTimeout(pincode,24000);
+ console.log("Pin number entered sucessfully");
+ function pincode(){
+    driver.findElement(By.xpath("//input[@name='billing_pincode']")).sendKeys('500018');
+ }
+ setTimeout(countrydropdown,25000);
+ console.log("Clicked country drop down");
+ function countrydropdown(){
+   driver.findElement(By.xpath("//input[@name='billing_state']")).click();
+ }
+ setTimeout(country,26000);
+ console.log("selected country");
+ function country(){
+   driver.findElement(By.xpath("//*[text()='India']")).click();
+ }
+ setTimeout(city,27000);
+ console.log("City name entered sucessfully");
+ function city(){
+    driver.findElement(By.xpath("//input[@name='billing_city']")).sendKeys('Hyderabad');
+ }
+ setTimeout(state,28000);
+ console.log("State name entered sucessfully");
+ function state(){
+    driver.findElement(By.xpath("//input[@name='billing_state']")).sendKeys('Telangana');
+ }
+ setTimeout(address,29000);
+ console.log("Address entered sucessfully");
+ function address(){
+    driver.findElement(By.xpath("//textarea[@name='billing_address']")).sendKeys('1-233/5 Janapriya Appartments Motinagar, Erragadda,Hyderabad');
+ }
+}
+example()
+
+
+
+
+
+
+const {By,Builder, WebDriver, Actions,assert, Key} = require("selenium-webdriver");
+require("chromedriver");
+
+async function example(){ 
+    var driver = await new Builder().forBrowser("chrome").build();
+    await driver.manage().window().maximize(); 
+await driver.get("https://www.flipkart.com/");
+await driver.findElement(By.xpath("(//input[@type='text'])[2]")).sendKeys('9704482087');
+await driver.findElement(By.xpath("//input[@type='password']")).sendKeys('As@061111');
+await driver.findElement(By.xpath("(//button[@type='submit'])[2]")).click();
+setTimeout(searchtheproduct,3000);
+console.log("Searching the product");
+function searchtheproduct(){
+  driver.findElement(By.name("q")).sendKeys("POCO M3",Key.ENTER);
+}
+setTimeout(selectingproduct,5000);
+console.log("Selected Product");
+function selectingproduct(){
+  driver.findElement(By.xpath("(//*[text()='POCO M3 (Cool Blue, 64 GB)'])[1]")).click();
+}
+setTimeout(item,3000);
+console.log("waited until launch the product");
+function item(){
+  driver.get("https://www.flipkart.com/poco-m3-cool-blue-64-gb/p/itm3bcdc32409005?pid=MOBG4CGF7NWAEVRK&lid=LSTMOBG4CGF7NWAEVRKSCTC2I&marketplace=FLIPKART&q=poco+m3&store=tyy%2F4io&srno=s_1_1&otracker=AS_Query_HistoryAutoSuggest_1_4_na_na_na&otracker1=AS_Query_HistoryAutoSuggest_1_4_na_na_na&fm=SEARCH&iid=da03f843-1714-4b91-965c-40345264cb7d.MOBG4CGF7NWAEVRK.SEARCH&ppt=hp&ppn=homepage&ssid=y4kwpni5ls0000001633344887343&qH=02307bbd0cb7930c");
+  driver.findElement(By.xpath("//button[@type='button']")).click();
+}
+setTimeout(delivery,12000);
+console.log("Clicked on delivery address");
+function delivery(){
+driver.findElement(By.xpath("//*[text()='Deliver Here']")).sendKeys(Key.ENTER);
+}
+setTimeout(continuebutton,14000);
+console.log("Clicked on continue");
+function continuebutton(){
+  driver.findElement(By.xpath("//*[text()='CONTINUE']")).click();
+ }
+ 
+ setTimeout(payment,15000);
+ console.log("Clicked on Payment section");
+ function payment(){
+  driver.findElement(By.xpath("//*[text()='UPI']")).click();  
+ }
+ setTimeout(upi,17000);
+ console.log("Selected Payment mode");
+ function upi(){
+   driver.findElement(By.xpath("//*[text()='PhonePe']")).click();
+ }
+ setTimeout(pay,18000);
+ console.log("Payment page");
+ function pay(){
+   driver.findElement(By.xpath("//*[text()='CONTINUE']")).click();
+ }
+ /*setTimeout(payment1,20000);
+ console.log("Payment section");
+ function payment1(){
+  driver.findElement(By.xpath("//*[text()='Wallets']")).click();  
+ }*/
+}
+example()
